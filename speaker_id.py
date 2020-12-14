@@ -162,11 +162,12 @@ np.random.seed(seed)
 if (options.AMSoftmax == 'True'):
     print('Using AMSoftmax loss function...')
     cost = AdditiveMarginSoftmax(margin=float(options.AMSoftmax_m))
+    print('Kích hoạt hàm AMSoftmax vào mô hình... Bắt đầu huấn luyện')
 
 else:
-    print('Using Normal loss function only...^^')
+    print('Using Softmax loss function...')
     cost = nn.NLLLoss()
-
+    print('Tắt hàm AMSoftmax... Bắt đầu huấn luyện')
 
 
 # Converting context and shift in samples
